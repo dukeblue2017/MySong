@@ -318,7 +318,6 @@ router.put(
 router.get(
   '/spotifyAPI/albumArtwork',
   (req, res) => {
-    console.log('req.query', req.query);
     const token = req.session.passport.user.spotifyToken;
     axios({ 
       method: 'GET',
