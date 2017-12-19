@@ -1,9 +1,8 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable max-len, no-console */
 import React from 'react';
 import { Segment, Header } from 'semantic-ui-react';
 import axios from 'axios';
 import MySongModal from './MySongModal';
-// import stylesheet from 
 
 class MyCurrentSongContainer extends React.Component {
   constructor(props) {
@@ -32,24 +31,22 @@ class MyCurrentSongContainer extends React.Component {
 
   render() {
     return (
-      <div >
-        <Segment attached="top">
-          {this.state.albumArtworkLink &&
-            <img src={this.state.albumArtworkLink} style={{ float: 'left', height: 150 }} alt="Album Artwork" />
-          }
-          <Header as="h1" style={{ textAlign: 'center' }}>
-            Current My Song is : {this.props.currentMySong.trackSummary}
-            <div style={{ fontSize: '15px', textAlign: 'center' }}>
-                Note: {this.props.currentMySong.note}
-            </div>
-          </Header>
-          <MySongModal
-            spotifyId={this.props.spotifyId}
-            spotifyToken={this.props.spotifyToken}
-            onMySongChange={this.props.onMySongChange}
-          />
-        </Segment>
-      </div>
+      <Segment attached="top" id="current-song">
+        {this.state.albumArtworkLink &&
+          <img src={this.state.albumArtworkLink} style={{ float: 'left', height: 150 }} alt="Album Artwork" />
+        }
+        <Header as="h1" style={{ textAlign: 'center' }}>
+          Current My Song is : {this.props.currentMySong.trackSummary}
+          <div style={{ fontSize: '15px', textAlign: 'center' }}>
+              Note: {this.props.currentMySong.note}
+          </div>
+        </Header>
+        <MySongModal
+          spotifyId={this.props.spotifyId}
+          spotifyToken={this.props.spotifyToken}
+          onMySongChange={this.props.onMySongChange}
+        />
+      </Segment>
     );
   }
 }
