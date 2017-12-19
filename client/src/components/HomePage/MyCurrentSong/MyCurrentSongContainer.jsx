@@ -32,8 +32,8 @@ class MyCurrentSongContainer extends React.Component {
 
   render() {
     return (
-      <div style={{ display: 'grid' }}>
-        <Segment attached="top" className="wrapper">
+      <div >
+        <Segment attached="top">
           {this.state.albumArtworkLink &&
             <img src={this.state.albumArtworkLink} style={{ float: 'left', height: 150 }} alt="Album Artwork" />
           }
