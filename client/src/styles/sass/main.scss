@@ -103,9 +103,6 @@ body > * {
   border-right: none;
 }
 
-#current-song, #current-song * {
-  /*background: white;*/
-}
 
 .current-song-info {
   grid-column: 2;
@@ -138,6 +135,7 @@ body > * {
 }
 
 #current-song-details > .song-note {
+  grid-column: 4;
 }
 
 .my-song-modal {
@@ -178,21 +176,34 @@ body > * {
 .current-playlist {
   grid-column: 2/3;
   grid-row: 3;
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .current-playlist-song {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 3fr 2fr 4fr 3fr;
   border: 1px solid lightgray;
 }
 
-.current-playlist-song > .artwork {
+.current-playlist-song > .userName {
   grid-column: 1;
   margin: auto;
 }
 
-.current-playlist-song > .song-info {
+.current-playlist-song > .artwork {
   grid-column: 2;
+  margin: auto;
+}
+
+.current-playlist-song > .song-info {
+  grid-column: 3;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.current-playlist-song > .note {
+  grid-column: 4;
 }
 
 #following {
