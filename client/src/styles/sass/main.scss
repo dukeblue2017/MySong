@@ -54,21 +54,26 @@ body > * {
   grid-template-columns: 1fr 3fr 1fr;
   border: none;
   padding: .4em;
-  > * {
-  margin: auto;
-  margin-left: 1%;
-  }
-  > .logo {
-  font-family: Trebuchet MS;
-  font-size: 3em;
-  grid-column: 2;
-}
-}
-
-#navbar, #navbar * {
   background-color: $primaryColor;
   color: whitesmoke;
+  
+  > * {
+    margin: auto;
+    margin-left: 1%;
+  }
+
+  > .logo {
+    font-family: Trebuchet MS;
+    font-size: 3em;
+    grid-column: 2;
+  }
+
+  * {
+    background-color: $primaryColor;
+    color: whitesmoke;
+  }
 }
+
 
 #navbar .user-and-logout {
   position: fixed;
@@ -204,6 +209,7 @@ body > * {
 
 .current-playlist-song > .note {
   grid-column: 4;
+  font-size: 1.2em;
 }
 
 #following {
@@ -214,7 +220,6 @@ body > * {
   border-bottom: none;
   overflow: auto;
   overflow-x: hidden;
-
 }
 
 .bottom-player {
