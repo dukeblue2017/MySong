@@ -160,7 +160,8 @@ class MySongModal extends Component {
 
     return (
       <div className="my-song-modal" style={{textAlign:'center'}}>
-        <Button onClick={this.show(true)}>Edit your current MySong</Button>
+        <h3>Current MySong:</h3>
+        <Button onClick={this.show(true)}>Edit</Button>
         <Modal dimmer={dimmer} open={open} onClose={this.close}>
           <Modal.Header>Change your MySong</Modal.Header>
           <Modal.Content image>
