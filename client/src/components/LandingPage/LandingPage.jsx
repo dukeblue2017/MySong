@@ -53,7 +53,7 @@ export default class LandingPage extends Component {
       activeItem: 'home',
     }
     this.onClick = () => {
-      window.location.href = 'http://127.0.0.1:3001/api/auth/spotify/';// eslint-disable-line
+      window.location.href = '/api/auth/spotify/';// eslint-disable-line
     }
     //this.handleItemClick = this.handleItemClick.bind(this);
     this.handleItemClick = (e, { name }) => {

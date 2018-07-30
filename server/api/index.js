@@ -43,6 +43,10 @@ router.use('/spotifyAPI/:id', (req, res, next) => {
   }
 });
 
+router.get('/app', (req, res) => {
+  res.sendFile(path.join(__dirname, '../../client/build/index.html'));
+});
+
 router.get('/users', (req, res) => {
   User.find().exec((err, users) => {
     res.send({ users });
@@ -94,9 +98,10 @@ router.get(
 // spotify OAuth callback for authorization process
 router.get(
   '/auth/spotify/callback',
-  passport.authenticate('spotify', { failureRedirect: 'http://127.0.0.1:3000' }),
+  passport.authenticate('spotify', { failureRedirect: process.env.FAILURE_REDIRECT }),
   (req, res) => {
     // req.user contains the data sent back from db/passport.js SpotifyStrategy
+    console.log(req)
     const user = req.user;
     // console.log('User for passport session \n', req.session.passport.user, '\n\n')
 
@@ -109,7 +114,8 @@ router.get(
     // res.set({ authorization: token });
     // axios.defaults.headers.common.jwt = token;
     // res.redirect(302, 'http://localhost:3000/home/'+req.user.spotifyId+'&token=' + token);
-    res.sendFile(path.join(__dirname + '/index.html'));
+    // res.sendFile(path.join(__dirname + '/index.html'));
+    res.redirect(302, process.env.HOMEPAGE);
   },
 );
 

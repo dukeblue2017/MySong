@@ -15,4 +15,4 @@ import "typeface-baloo";
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+// registerServiceWorker();

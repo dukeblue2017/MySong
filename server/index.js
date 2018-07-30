@@ -30,6 +30,7 @@ app.use(bodyParser.json());
 //app.use(methodOverride());
 
 app.use(express.static(path.join(__dirname, '../client/build')));
+
 /* we do not have access to process.env.MONGODB_URI without
  require('dotenv').config({path:'../env.env'}) listed above */
 mongoose.connect(process.env.MONGODB_URI, { useMongoClient: true });

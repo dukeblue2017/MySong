@@ -3,8 +3,6 @@ import axios from 'axios';
 import { Button } from 'semantic-ui-react';
 import Search from './Search';
 
-const HOME = 'http://127.0.0.1:3000';
-
 class NavBarContainer extends React.Component {
   constructor(props) {
     super(props);
@@ -12,7 +10,7 @@ class NavBarContainer extends React.Component {
   }
   handleLogOut() { // eslint-disable-line
     axios.delete('/api/deleteSession');
-    window.location.href = HOME;
+    window.location.hash = '';
   }
 
   render() {
