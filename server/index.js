@@ -59,3 +59,7 @@ app.use('/api', api);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => { console.log('Running on ', port); });
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
+})

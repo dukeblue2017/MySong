@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  HashRouter as Router,
+  BrowserRouter as Router,
   Route,
 } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
@@ -23,7 +23,7 @@ class App extends Component {
       <Router>
         <div>
           <Route exact path="/" component={LandingPage} />
-          <Route exact path="/home/*" history={history} component={HomePage} />
+          <Route exact path="/home" history={history} component={HomePage} />
         </div>
       </Router>
     );

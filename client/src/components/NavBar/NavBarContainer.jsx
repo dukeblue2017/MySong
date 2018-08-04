@@ -10,7 +10,7 @@ class NavBarContainer extends React.Component {
   }
   handleLogOut() { // eslint-disable-line
     axios.delete('/api/deleteSession');
-    window.location.hash = '';
+    window.location.pathname = '';
   }
 
   render() {
