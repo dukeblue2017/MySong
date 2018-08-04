@@ -11,7 +11,6 @@ const passport = require('passport');/* http://www.passportjs.org/docs */
 // const redirect = require('./redirect.html');
 const Twitter = require('twitter');
 const secret = 'myappisawesome';
-const HOME = 'http://127.0.0.1:3000';
 const nodemailer = require('nodemailer');
 
 router.use('/spotifyAPI/:id', (req, res, next) => {
@@ -65,7 +64,7 @@ router.get('/me', (req, res) => {
       if (req.session) {
         res.status(200).json(req.session);
       } else {
-        res.redirect(HOME);
+        res.redirect(process.env.HOMEPAGE);
       }
     })
     .catch((err) => {
@@ -90,7 +89,7 @@ router.get(
         'playlist-modify-private',
       ],
       showDialog: true,
-      failureRedirect: 'http://127.0.0.1:3000',
+      failureRedirect: process.env.FAILURE_REDIRECT,
     },
   ),
 );
@@ -126,7 +125,7 @@ router.get(
   'twitter-authz',
   {
     forceLogin: true,
-    failureRedirect: 'http://127.0.0.1:3000'
+    failureRedirect: process.env.FAILURE_REDIRECT,
   },
   ));
 
