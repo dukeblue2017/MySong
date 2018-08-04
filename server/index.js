@@ -15,7 +15,7 @@ require('dotenv').config({ path: '../env.env' });
 ** strategies being implemented(Spotify only), without this line
 ** passport.authenticate() calls in server/api/index.js would not be able
 ** to find our spotify strategy */
-require('../db/passport.js')(passport);
+require('./passport.js')(passport);
 
 const app = express();
 

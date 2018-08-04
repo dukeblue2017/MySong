@@ -1,7 +1,7 @@
 const LocalStrategy = require('passport-local').Strategy;
 const SpotifyStrategy = require('passport-spotify').Strategy;
 const TwitterStrategy = require('passport-twitter').Strategy;
-const User = require('./model/user.js');
+const User = require('../db/model/user.js');
 require('dotenv').config({ path: '../../env.env' });
 
 
@@ -19,7 +19,7 @@ module.exports = (passport) => {
     {
       clientID: process.env.SPOTIFY_CLIENT_ID,
       clientSecret: process.env.SPOTIFY_CLIENT_SECRET,
-      callbackURL: 'http://127.0.0.1:3001/api/auth/spotify/callback',
+      callbackURL: `${process.env.BASE_URL}/api/auth/spotify/callback`,
     },
     (accessToken, refreshToken, profile, done) => {
       // check to see if the user already exists in the db
@@ -73,7 +73,7 @@ module.exports = (passport) => {
         // options for google strategy
         consumerKey: process.env.TWITTER_CONSUMER_KEY,
         consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-        callbackURL: 'http://127.0.0.1:3001/api/auth/twitter/callback',
+        callbackURL: `${process.env.BASE_URL}/api/auth/twitter/callback`,
     }, (accessToken, refreshToken, profile, done) => {
         // check if user already exists in our own db
         console.log('twitter authentication successful!');
