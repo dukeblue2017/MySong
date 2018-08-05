@@ -42,10 +42,6 @@ router.use('/spotifyAPI/:id', (req, res, next) => {
   }
 });
 
-router.get('/app', (req, res) => {
-  res.sendFile(path.join(__dirname, '../../client/build/index.html'));
-});
-
 router.get('/users', (req, res) => {
   User.find().exec((err, users) => {
     res.send({ users });

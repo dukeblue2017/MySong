@@ -10,8 +10,8 @@ const methodOverride = require('method-override');
 
 // dotenv used to store our spotify client_id and secret on process.env
 require('dotenv').config({ path: '../env.env' });
-/* the below require('../db/passport.js')(passport) is used to reduce the
-** amount of code in this file, look to db/passport.js for the passport
+/* the below require('./passport.js')(passport) is used to reduce the
+** amount of code in this file, look to passport.js for the passport
 ** strategies being implemented(Spotify only), without this line
 ** passport.authenticate() calls in server/api/index.js would not be able
 ** to find our spotify strategy */
