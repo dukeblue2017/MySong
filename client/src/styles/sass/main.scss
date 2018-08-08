@@ -317,3 +317,31 @@ body > * {
   grid-row: 4;
   border: none;
 }
+
+@media only screen and (max-width: 700px) {
+  .wrapper,{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    max-height: 100vh;
+  }
+
+  .wrapper {
+    height: auto;
+  }
+
+  #playlist-container, .current-playlist, .bottom-player, .ui.search, #cryogenize, [id^=twitter] {
+    display: none;
+  }
+
+  #navbar {
+    display: flex;
+    width: 100%;
+    .username {
+      font-size: 1.5em;
+    }
+  }
+  #navbar > .logo {
+    font-size: 2em;
+  }
+}
