@@ -6,7 +6,6 @@ const path = require('path');
 
 const envPath = path.join(__dirname, '../env.env');
 require('dotenv').config({ path: envPath });
-console.log('envPath', envPath)
 
 
 module.exports = (passport) => {
