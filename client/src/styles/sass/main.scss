@@ -338,7 +338,7 @@ body > * {
   }
 
   .wrapper {
-    height: auto;
+    overflow: hidden;
   }
 
   #playlist-container, .current-playlist, .bottom-player, .ui.search, #cryogenize, [id^=twitter] {
