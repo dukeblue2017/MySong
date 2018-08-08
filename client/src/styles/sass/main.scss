@@ -341,7 +341,41 @@ body > * {
       font-size: 1.5em;
     }
   }
+
   #navbar > .logo {
     font-size: 2em;
+  }
+
+  #current-song {
+    display: flex;
+  }
+
+  .current-song-info {
+    display: flex;
+    order: -1;
+  }
+
+  .current-song-artwork {
+    margin: auto;
+    margin-left: 10px;
+    max-height: 100px;
+  }
+
+  #current-song-details {
+    margin: 15px;
+  }
+
+  #current-song-details > div {
+    margin-top: 5px;
+  }
+
+  .my-song-modal {
+    margin-left: 1%;
+  }
+
+  .my-song-modal > .ui.button {
+    padding: .7em;
+    font-size: .8em;
+    /*margin-left: .25em;*/
   }
 }
