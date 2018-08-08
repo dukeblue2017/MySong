@@ -319,6 +319,17 @@ body > * {
 }
 
 @media only screen and (max-width: 700px) {
+
+  .ui.large.secondary.menu {
+    display: flex;
+    flex-wrap: wrap;
+
+    .right.item {
+      margin: auto;
+    }
+
+  }
+
   .wrapper,{
     display: flex;
     flex-direction: row;
@@ -376,6 +387,5 @@ body > * {
   .my-song-modal > .ui.button {
     padding: .7em;
     font-size: .8em;
-    /*margin-left: .25em;*/
   }
 }
