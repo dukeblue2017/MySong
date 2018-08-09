@@ -275,6 +275,7 @@ body > * {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: auto;
     max-height: 100vh; }
   .wrapper {
     overflow: hidden; }
@@ -284,7 +285,9 @@ body > * {
     display: flex;
     width: 100%; }
     #navbar .username {
-      font-size: 1.5em; }
+      font-size: 1.5em;
+      padding: 0px 20px;
+      text-align: center; }
   #navbar > .logo {
     font-size: 2em; }
   #current-song {
@@ -304,4 +307,6 @@ body > * {
     margin-left: 1%; }
   .my-song-modal > .ui.button {
     padding: .7em;
-    font-size: .8em; } }
+    font-size: .8em; }
+  #following {
+    width: 100%; } }

@@ -334,6 +334,7 @@ body > * {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    height: auto;
     max-height: 100vh;
   }
 
@@ -350,6 +351,8 @@ body > * {
     width: 100%;
     .username {
       font-size: 1.5em;
+      padding: 0px 20px;
+      text-align: center;
     }
   }
 
@@ -387,5 +390,9 @@ body > * {
   .my-song-modal > .ui.button {
     padding: .7em;
     font-size: .8em;
+  }
+
+  #following {
+    width: 100%;
   }
 }
